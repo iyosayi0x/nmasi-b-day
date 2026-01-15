@@ -59,7 +59,7 @@
 			return task;
 		});
 
-		localStorage.setItem(PERSISTENCE_KEY_NAME, JSON.stringify(preflightTasks));
+		sessionStorage.setItem(PERSISTENCE_KEY_NAME, JSON.stringify(preflightTasks));
 
 		handleTaskAction(id);
 	};
@@ -80,7 +80,7 @@
 		 * load tasks - merge stored isDone state with current tasks
 		 * This ensures new tasks aren't lost when loading old persisted data
 		 */
-		const storedTasks = localStorage.getItem(PERSISTENCE_KEY_NAME);
+		const storedTasks = sessionStorage.getItem(PERSISTENCE_KEY_NAME);
 		if (storedTasks) {
 			const parsedTasks: typeof preflightTasks = JSON.parse(storedTasks);
 			const storedTaskMap = new Map(parsedTasks.map((t) => [t.id, t.isDone]));

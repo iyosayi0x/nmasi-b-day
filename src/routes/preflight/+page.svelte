@@ -77,11 +77,19 @@
 	 */
 	$effect(() => {
 		/**
-		 * load tasks
+		 * load tasks - merge stored isDone state with current tasks
+		 * This ensures new tasks aren't lost when loading old persisted data
 		 */
 		const storedTasks = localStorage.getItem(PERSISTENCE_KEY_NAME);
 		if (storedTasks) {
-			preflightTasks = JSON.parse(storedTasks);
+			const parsedTasks: typeof preflightTasks = JSON.parse(storedTasks);
+			const storedTaskMap = new Map(parsedTasks.map((t) => [t.id, t.isDone]));
+
+			// Merge: keep current tasks, but restore isDone state from storage
+			preflightTasks = preflightTasks.map((task) => ({
+				...task,
+				isDone: storedTaskMap.get(task.id) ?? task.isDone
+			}));
 		}
 
 		/**

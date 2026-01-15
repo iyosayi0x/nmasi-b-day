@@ -72,13 +72,26 @@
 				<div
 					class="relative h-full overflow-hidden rounded-2xl border border-white/20 bg-white/5 shadow-2xl backdrop-blur-sm transition-all duration-500 lg:group-hover:border-accent/50 lg:group-hover:shadow-accent/20"
 				>
-					<!-- Image -->
-					<img
-						src={item.url}
-						alt={item.label}
-						class="h-full w-full object-cover transition-transform duration-700 lg:group-hover:scale-110"
-						draggable="false"
-					/>
+					<!-- Media (Image or Video) -->
+					{#if item.media_type === 'VIDEO'}
+						<video
+							src={item.url}
+							class="h-full w-full object-cover transition-transform duration-700 lg:group-hover:scale-110"
+							muted
+							loop
+							autoplay
+							playsinline
+						>
+							<track kind="captions" />
+						</video>
+					{:else}
+						<img
+							src={item.url}
+							alt={item.label}
+							class="h-full w-full object-cover transition-transform duration-700 lg:group-hover:scale-110"
+							draggable="false"
+						/>
+					{/if}
 
 					<!-- Enhanced Gradient Overlay -->
 					<div

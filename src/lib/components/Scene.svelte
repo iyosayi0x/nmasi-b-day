@@ -3,6 +3,7 @@
 	import { ContactShadows, Float, useGltf, OrbitControls, HTML } from '@threlte/extras';
 	import { onMount } from 'svelte';
 	import CherryTree from './models/cherry_tree.svelte';
+	import LoadingFallback from './LoadingFallback.svelte';
 	import { gsap, ScrollTrigger } from '$lib/index';
 	import Branch from './Branch.svelte';
 
@@ -149,7 +150,11 @@
 <T.AmbientLight intensity={0.5} />
 
 <Float speed={1} rotationIntensity={0.2} floatIntensity={0.3}>
-	<CherryTree />
+	<CherryTree>
+		{#snippet fallback()}
+			<LoadingFallback />
+		{/snippet}
+	</CherryTree>
 
 	{#each branches as branch, i}
 		<Branch

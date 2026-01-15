@@ -44,13 +44,13 @@
 	<!-- Scroll to Explore Indicator -->
 	{#if !showChowdeck && activeAct === -1}
 		<div
-			class="pointer-events-none fixed bottom-12 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 opacity-50 md:bottom-20"
+			class="pointer-events-none fixed bottom-12 left-1/2 z-20 flex -translate-x-1/2 animate-bounce flex-col items-center gap-2 opacity-50 md:bottom-20"
 			transition:fade
 		>
-			<span class="text-[10px] font-black tracking-[0.4em] text-accent uppercase"
+			<span class="text-[10px] font-black tracking-[0.4em] text-white uppercase"
 				>Initiate Scroll</span
 			>
-			<div class="animate-bounce">
+			<div>
 				<Icon icon="ph:caret-down-bold" class="text-2xl text-accent" />
 			</div>
 		</div>

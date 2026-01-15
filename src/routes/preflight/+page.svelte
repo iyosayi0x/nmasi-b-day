@@ -16,6 +16,11 @@
 	 */
 	let preflightTasks = $state([
 		{
+			id: '0',
+			label: "Ensure you're not using that useless safari browser",
+			isDone: false
+		},
+		{
 			id: '1',
 			label: 'Maximize your browser window',
 			isDone: false

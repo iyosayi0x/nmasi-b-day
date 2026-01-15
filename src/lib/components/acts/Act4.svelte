@@ -120,7 +120,7 @@
 					A tree is only as strong as the roots that anchor it and the forest that surrounds it.
 					<span class="hidden md:inline"><br /></span>
 					<span class="font-bold text-accent">Interlink</span> with the nodes to reveal the voices that
-					have grown alongside you.
+					have grown alongside you. Cheers to knowing you for 5 years.
 				</p>
 				<div
 					class="mt-8 flex justify-center gap-4 text-[10px] font-bold tracking-[0.2em] text-ghost/30 uppercase"

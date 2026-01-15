@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 
 	const letterText =
-		"Dear Legend,\n\nThis isn't just a celebration of a year, but of the soul you've become. From Nsukka-leap of faith-Keke hopping to the forest of impact you've grown around you, your story is far from over.\n\nKeep setting your heart ablaze.";
+		"Dear Legend, this is more than a birthday celebration; it is a retrospective of the soul you have become. From your iconic Nsukka leap of faith jumping out of a moving Keke to the forest of impact you have grown around you, your story is written in gold. You are the architect of your own light, so keep setting your heart ablaze. Tell `mide your love` and Stephen to top this lmao,😂. This entire digital archive was curated and built by Iyosayi Onaiwu, a one-man production for a one-of-a-kind legend. As Rengoku said: 'Go beyond your limits.";
 	let typewriterDisplay = $state('');
 	let typewriterFinished = $state(false);
 

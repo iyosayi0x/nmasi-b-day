@@ -1,11 +1,15 @@
 <script lang="ts">
 	import { T } from '@threlte/core';
-	import { ContactShadows, Float, useGltf, OrbitControls, HTML } from '@threlte/extras';
+	import { ContactShadows, Float, OrbitControls } from '@threlte/extras';
 	import { onMount } from 'svelte';
 	import CherryTree from './models/cherry_tree.svelte';
 	import LoadingFallback from './LoadingFallback.svelte';
 	import { gsap, ScrollTrigger } from '$lib/index';
 	import Branch from './Branch.svelte';
+	import { browser } from '$app/environment';
+
+	const fmbSound = '/sounds/fmb.mp3';
+	let backgroundAudio: HTMLAudioElement | null = $state(null);
 
 	const branches: {
 		id: number;
@@ -129,6 +133,28 @@
 				i
 			);
 		});
+	});
+
+	// Reactively pause/resume audio based on active chapter
+	$effect(() => {
+		if (!backgroundAudio) return;
+
+		if (activeChapter === 4) {
+			// Epilogue is active - pause audio
+			backgroundAudio.pause();
+		} else {
+			// Resume audio for all other chapters
+			backgroundAudio.play();
+		}
+	});
+
+	onMount(() => {
+		if (!browser) return;
+		backgroundAudio = new Audio(fmbSound);
+
+		backgroundAudio.currentTime = 0;
+		backgroundAudio.loop = true;
+		backgroundAudio.play();
 	});
 </script>
 

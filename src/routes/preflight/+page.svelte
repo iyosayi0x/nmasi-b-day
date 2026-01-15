@@ -16,23 +16,23 @@
 	 */
 	let preflightTasks = $state([
 		{
-			id: '0',
+			id: '1',
 			label: "Ensure you're not using that useless safari browser",
 			isDone: false
 		},
 		{
-			id: '1',
+			id: '2',
 			label: 'Maximize your browser window',
 			isDone: false
 		},
 		{
-			id: '2',
+			id: '3',
 			label: 'Enable audio',
 			hint: 'Best with headphones 🎧',
 			isDone: false
 		},
 		{
-			id: '3',
+			id: '4',
 			label: 'Prepare for a walk down memory lane',
 			isDone: false
 		}
@@ -43,7 +43,7 @@
 	 */
 
 	const handleTaskAction = (taskId: string) => {
-		if (taskId === '2') {
+		if (taskId === '3') {
 			if (clickSoundAudio) {
 				clickSoundAudio.currentTime = 0;
 				clickSoundAudio.play();

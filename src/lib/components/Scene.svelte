@@ -50,7 +50,7 @@
 			id: 4,
 			title: 'Epilogue',
 			subtitle: 'Easter Eggs',
-			position: [0.5, 8, 0.5], // Top area
+			position: [0.5, 7.7, 0.5], // Top area
 			description: 'Hidden Gems - Quiet secrets of a life well-lived.'
 		}
 	];
